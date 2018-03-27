@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>百度一下</title>
+		<link rel="stylesheet" href="css/baidu.css" />
+	</head>
+
+	<body>
+		<div class="main">
+			<div>
+				<img src="img/baidu_main.jpg" id="main_photo"/>
+			</div>
+			
+			<div class="main-input">
+				<input id="kw" class="s_ipt" value="" maxlength="255">
+				<img id="btn-Search" src="img/b1.png" height="46" style="cursor:pointer">
+				<!--关键字匹配列表-->
+				<div class="bdsug">
+					<ul id="mainKeywordUl">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--跨域请求的script加载区-->
+		<div id="footScript"></div>
+
+		<script type="text/javascript">
+			var btnSearch = document.getElementById("btn-Search");
+			var inputKw = document.getElementById("kw");
+			var mainKeywordUl = document.getElementById("mainKeywordUl").getElementsByTagName("li");
+
+			btnSearch.onmouseover = function() {
+				//改变image src属性
+				this.setAttribute("src", "img/b2.png");
+			}
+			btnSearch.onmouseout = function() {
+				//改变image src属性
+				this.setAttribute("src", "img/b1.png");
+			}
+			btnSearch.onclick = function() {
+				//点击 百度一下
+				var licontent = inputKw.value;
+				//console.log(licontent)
+				//跳转url  encodeURIComponent() 函数可把字符串（String）作为 URI 组件进行编码
+				var hrefUrl = 'https://www.baidu.com/s?wd=' + encodeURIComponent(licontent);
+				//获取当前页面的网址
+				window.location.href = hrefUrl;
+			}
+			inputKw.onkeyup = function() {
+				//先清空之前添加的 标签元素
+				var rmScript = document.getElementById("footScript").getElementsByTagName("script");
+				clearElement(rmScript);
+				//获取查询关键字
+				var keyword = inputKw.value;
+				//百度搜索链接 百度API
+				var httplink = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?' +
+					'wd=' + encodeURIComponent(keyword) +
+					'&json=1&p=3&cb=my'					
+				//动态生成script标签 创建对象
+				var script = document.createElement('script');
+				script.src = httplink;
+				//添加了脚本之后会执行下面 mkJsonp方法,并自动传递参数进去 appendChild:添加到列表 最后一个
+				document.getElementById("footScript").appendChild(script);
+			}
+
+			function clearElement(element) {
+				//清空
+				for(var i = 0, h = element.length; i < h; i++) {
+					//移除标签(每次移除一个标签时候 element.length都会变化,所以我们每次移除第一个就可以)
+					element[0].remove();
+				};
+			}
+            
+			function my(json) {				
+				//清除之前数据
+				var element = document.getElementById("mainKeywordUl");
+				element.innerHTML = '';
+				if(typeof json == 'object') {
+					var data = json.s;
+					if(data) {
+						//遍历数组添加数据  foreach调用数组的每个元素 并将元素传递给回调函数
+						//function(当前元素，当前元素索引值，数组)
+						data.forEach(function(item, index, array) {
+							var newli = document.createElement("li");
+							newli.innerHTML = '<a href=https://www.baidu.com/s?wd=' + encodeURIComponent(item) + '>' + item + '</a>';
+							document.getElementById('mainKeywordUl').appendChild(newli);
+						});
+					};
+				};
+			}
+		</script>
+	</body>
+</html>
