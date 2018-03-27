@@ -1,93 +1,173 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-hans">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>百度一下</title>
-		<link rel="stylesheet" href="css/baidu.css" />
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/main.css">
+		<title>首页</title>
 	</head>
-
 	<body>
-		<div class="main">
-			<div>
-				<img src="img/baidu_main.jpg" id="main_photo"/>
+		<div class="col-md-12" id="top">
+			<div >
+				<a href=""><img id="icon" src="img/icon.jpg" alt="" ></a>
 			</div>
-			
-			<div class="main-input">
-				<input id="kw" class="s_ipt" value="" maxlength="255">
-				<img id="btn-Search" src="img/b1.png" height="46" style="cursor:pointer">
-				<!--关键字匹配列表-->
-				<div class="bdsug">
-					<ul id="mainKeywordUl">
-					</ul>
+			<div class="sec">
+				<p id="icon1">CONOSOFT</p>
+				<div class="wd">
+					<a href="">首页</a>
+					<a href="">产品开发</a>
+					<a href="">服务项目</a>
+					<a href="">微网建设</a>
+					<a href="">营销推广</a>
+					<a href="">行业资讯</a>
+					<a href="">关于我们</a>
+				</div>
+			</div>
+			<div>
+				<img id="ball" src="img/ball.jpg" alt="">
+				<div class="des">
+					<h1 id="lg">科诺软件</h1>
+					<p id="selg">助你高效实现<b>企业管理信息化</b>!</p>
+					<p id="thllg">企业办公自动化OA系统，全面支持PC、手机、平板</p>
+					
+					<p class="thlg">多终端定制,OA系统、CRM客户管理系统、HR人力</p>
+					<p class="thlg">资源系统等通用系统,酒店/餐饮系统、门店智能化方</p>
+					<p class="thlg">案等行业应用系统。</p>
 				</div>
 			</div>
 		</div>
-		<!--跨域请求的script加载区-->
-		<div id="footScript"></div>
+		<img id="bolang" src="img/bolang.jpg" alt="">
+		<div class="middle">
+			<h1 id="lg2">我们的服务</h1>
+			<p id="desc" >应用软件管理系统的目的在于把更先进、更便捷、更合理的管理思想融入到企业的日常运营中。</p>
+			<p id="desc1">运用企业软件管理系统，可以用简单的操作方式监控企业每天、每时的详细运营状况，使企业管理者合理调配</p>
+			<p id="desc2">资源、轻松核查账目、给予企业发展提供详细的决策依据，从生产、管理上给企业带来有效帮助。</p>
+			<div>
+				<img id="allball" src="img/allball.jpg" alt="">
+			</div>
+		</div>
+		<img id="bolang2" src="img/bolang2.jpg" alt="">
+		<div class="third">
+			<h1 id="lg3">我们的特色</h1>
+			<img id="three" src="img/three.jpg" alt="" />
+			<div class="des1">
+				<p class="title">1、按需所求、量身定制</p>
+				<p class="dess1">告诉我们您想要的软件，只需提供</p>
+				<p class="dess1">新建系统的结构需求，功能需求。</p>
+				<p class="dess1">配合开发人员了解企业固有业务</p>
+				<p class="dess1">流程，并讨论设计新业务流程。软</p>
+				<p class="dess1">件就能与企业当前的办公和业务</p>
+				<p class="dess1">系统无缝结合。</p>
+			</div>
+			<div class="des22">
+				<p class="title">2、操作简易、运用自如</p>
+				<p class="dess1">告诉我们您想要的软件，只需提供</p>
+				<p class="dess1">新建系统的结构需求，功能需求。</p>
+				<p class="dess1">配合开发人员了解企业固有业务</p>
+				<p class="dess1">流程，并讨论设计新业务流程。软</p>
+				<p class="dess1">件就能与企业当前的办公和业务</p>
+				<p class="dess1">系统无缝结合。</p>
+			</div>
+			<div class="des3w">
+				<p class="title">3、售后完善、跟踪排障</p>
+				<p class="dess1">告诉我们您想要的软件，只需提供</p>
+				<p class="dess1">新建系统的结构需求，功能需求。</p>
+				<p class="dess1">配合开发人员了解企业固有业务</p>
+				<p class="dess1">流程，并讨论设计新业务流程。软</p>
+				<p class="dess1">件就能与企业当前的办公和业务</p>
+				<p class="dess1">系统无缝结合。</p>
+			</div>
+		</div>
+		<img id="bolang3" src="img/bolang3.jpg" alt="">
+		<div class="four">
+			<h1 id="lg4">开发流程</h1>
+			<p style="padding-left: 675px;">科诺科技以客户为导向，顾客式服务贯彻项目全程</p>
+			<div>
+				<img id="zhexian" src="img/zhexian.jpg" alt="">
+			</div>
+		</div>
+		<img id="bolang4" src="img/bolang4.jpg" alt="">
+		<div class="five">
+			<h1 id="lg5">我们的优势</h1>
 
-		<script type="text/javascript">
-			var btnSearch = document.getElementById("btn-Search");
-			var inputKw = document.getElementById("kw");
-			var mainKeywordUl = document.getElementById("mainKeywordUl").getElementsByTagName("li");
-
-			btnSearch.onmouseover = function() {
-				//改变image src属性
-				this.setAttribute("src", "img/b2.png");
-			}
-			btnSearch.onmouseout = function() {
-				//改变image src属性
-				this.setAttribute("src", "img/b1.png");
-			}
-			btnSearch.onclick = function() {
-				//点击 百度一下
-				var licontent = inputKw.value;
-				//console.log(licontent)
-				//跳转url  encodeURIComponent() 函数可把字符串（String）作为 URI 组件进行编码
-				var hrefUrl = 'https://www.baidu.com/s?wd=' + encodeURIComponent(licontent);
-				//获取当前页面的网址
-				window.location.href = hrefUrl;
-			}
-			inputKw.onkeyup = function() {
-				//先清空之前添加的 标签元素
-				var rmScript = document.getElementById("footScript").getElementsByTagName("script");
-				clearElement(rmScript);
-				//获取查询关键字
-				var keyword = inputKw.value;
-				//百度搜索链接 百度API
-				var httplink = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?' +
-					'wd=' + encodeURIComponent(keyword) +
-					'&json=1&p=3&cb=my'					
-				//动态生成script标签 创建对象
-				var script = document.createElement('script');
-				script.src = httplink;
-				//添加了脚本之后会执行下面 mkJsonp方法,并自动传递参数进去 appendChild:添加到列表 最后一个
-				document.getElementById("footScript").appendChild(script);
-			}
-
-			function clearElement(element) {
-				//清空
-				for(var i = 0, h = element.length; i < h; i++) {
-					//移除标签(每次移除一个标签时候 element.length都会变化,所以我们每次移除第一个就可以)
-					element[0].remove();
-				};
-			}
-            
-			function my(json) {				
-				//清除之前数据
-				var element = document.getElementById("mainKeywordUl");
-				element.innerHTML = '';
-				if(typeof json == 'object') {
-					var data = json.s;
-					if(data) {
-						//遍历数组添加数据  foreach调用数组的每个元素 并将元素传递给回调函数
-						//function(当前元素，当前元素索引值，数组)
-						data.forEach(function(item, index, array) {
-							var newli = document.createElement("li");
-							newli.innerHTML = '<a href=https://www.baidu.com/s?wd=' + encodeURIComponent(item) + '>' + item + '</a>';
-							document.getElementById('mainKeywordUl').appendChild(newli);
-						});
-					};
-				};
-			}
-		</script>
+			<p id="de">科诺科技凭借其专业化、成熟的网站建设经验，为客户提供定制网站建设、项目外包等全面的专业软件服务，提供</p>
+			<p id="de1">基于WEB的应用系统和基于桌面应用系统开发方案。</p>
+			<p id="de2">科诺技术掌握NET、J2EE、数据库、面向对象分析设计、项目管理等网站建设的专业技术。</p>
+			<p id="de3">为您的项目的成果提供绝对保证。</p>
+			<div>
+				<img id="four" src="img/four.jpg" alt="">
+			</div>
+			<div class="des2" id="advantage">
+				<p class="title2">团队优势</p>
+				<p class="dess2" >我们拥有高效、专业、</p>
+				<p class="dess2" >敬业的团队，在这个团</p>
+				<p class="dess2" >队里，有多年软件行业</p>
+				<p class="dess2" >经验的开发工程师和服</p>
+				<p class="dess2" >务工程师。</p>
+			</div>
+			<div class="des2" id="case">
+				<p class="title2">案例优势</p>
+				<p class="dess2" >我们强调精密的理论，精</p>
+				<p class="dess2" >心的设计，严谨的开发</p>
+				<p class="dess2" >精确的实施为客户提供</p>
+				<p class="dess2" >完美的产品和服务。</p>
+			</div>
+			<div class="des2" id="explore">
+				<p class="title2">开发优势</p>
+				<p class="dess2" >各类基于B/S,C/S系统</p>
+				<p class="dess2" >开发经验丰富，模块化</p>
+				<p class="dess2" >本地化开发保证开发进</p>
+				<p class="dess2" >度及质量。因为您的选</p>
+				<p class="dess2" >择，我们为您创造价值！</p>
+			</div>
+			<div class="des2" id="service">
+				<p class="title2">服务优势</p>
+				<p class="dess2" >根据用户在信息系统建</p>
+				<p class="dess2" >设各个阶段的需求，在</p>
+				<p class="dess2" >特定的阶段为用户提供</p>
+				<p class="dess2" >特定的服务。</p>
+			</div>
+		</div>
+		<img id="bolang5" src="img/bolang5.jpg" alt="">
+		<div class="six">
+			<div class="des3" id="product">
+				<p class="title3">产品开发</p>
+				<p class="dess3">微网站建设</p>
+				<p class="dess3">电商平台建设</p>
+				<p class="dess3">质量追溯平台</p>
+			</div>
+			<div class="des3" id="project">
+				<p class="title3">服务项目</p>
+				<p class="dess3">"互联网+"</p>
+				<p class="dess3">软件开发</p>
+				<p class="dess3">营销推广</p>
+			</div>
+			<div class="des3" id="us">
+				<p class="title3">关于我们</p>
+				<p class="dess3">公司简介</p>
+				<p class="dess3">公司文化</p>
+				<p class="dess3">联系我们</p>
+			</div>
+			<div class="des3" id="mobile">
+				<p id="dess3">手机扫一扫</p>
+				<img id="erweima" src="img/erweima.jpg" alt="">
+			</div>
+			<div class="des3" id="final">
+				<div>
+					<img id="address" src="img/address.jpg" alt="">
+				</div>
+				<p>&nbsp;&nbsp;河北科诺软件科技有限公司</p>
+				<div >
+					<img id="tel" src="img/tel.jpg" alt="">
+				</div>
+				<p>&nbsp;0311-88888888</p>
+				<div>
+					<img id="posi" src="img/posi.jpg" alt="">
+				</div>
+				<p id="last1">&nbsp;&nbsp;石家庄市维明南大街12号（维明南大街与中山西路交叉口西南角）</p>
+				<hr id="last2"/>
+				<p id="last3">版权所有：河北科诺软件科技有限公司&nbsp;&nbsp;&nbsp;备案编号：冀ICF证05021672</p>
+			</div>
+		</div>
 	</body>
+
 </html>
